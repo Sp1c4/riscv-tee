@@ -1,18 +1,4 @@
- /*                                                                      
- Copyright 2020 Blue Liang, liangkangnan@163.com
-                                                                         
- Licensed under the Apache License, Version 2.0 (the "License");         
- you may not use this file except in compliance with the License.        
- You may obtain a copy of the License at                                 
-                                                                         
-     http://www.apache.org/licenses/LICENSE-2.0                          
-                                                                         
- Unless required by applicable law or agreed to in writing, software    
- distributed under the License is distributed on an "AS IS" BASIS,       
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and     
- limitations under the License.                                          
- */
+
 
 `include "defines.v"
 
@@ -50,6 +36,20 @@ module rib(
     output reg[`MemBus] m3_data_o,         // 主设备3读取到的数据
     input wire m3_req_i,                   // 主设备3访问请求标志
     input wire m3_we_i,                    // 主设备3写标志
+
+    // master 4 interface
+    input wire[`MemAddrBus] m4_addr_i,     // 主设备4读、写地址
+    input wire[`MemBus] m4_data_i,         // 主设备4写数据
+    output reg[`MemBus] m4_data_o,         // 主设备4读取到的数据
+    input wire m4_req_i,                   // 主设备4访问请求标志
+    input wire m4_we_i,                    // 主设备4写标志
+
+    // master 5 interface
+    input wire[`MemAddrBus] m5_addr_i,     // 主设备5读、写地址
+    input wire[`MemBus] m5_data_i,         // 主设备5写数据
+    output reg[`MemBus] m5_data_o,         // 主设备5读取到的数据
+    input wire m5_req_i,                   // 主设备5访问请求标志
+    input wire m5_we_i,                    // 主设备5写标志
 
     // slave 0 interface
     output reg[`MemAddrBus] s0_addr_o,     // 从设备0读、写地址
@@ -101,34 +101,43 @@ module rib(
     parameter [3:0]slave_4 = 4'b0100;
     parameter [3:0]slave_5 = 4'b0101;
 
-    parameter [1:0]grant0 = 2'h0;
-    parameter [1:0]grant1 = 2'h1;
-    parameter [1:0]grant2 = 2'h2;
-    parameter [1:0]grant3 = 2'h3;
+    parameter [2:0]grant0 = 3'h0;
+    parameter [2:0]grant1 = 3'h1;
+    parameter [2:0]grant2 = 3'h2;
+    parameter [2:0]grant3 = 3'h3;
+    parameter [2:0]grant4 = 3'h4;
+    parameter [2:0]grant5 = 3'h5;
 
-    wire[3:0] req;
-    reg[1:0] grant;
+
+    wire[5:0] req;
+    reg[2:0] grant;
 
 
     // 主设备请求信号
-    assign req = {m3_req_i, m2_req_i, m1_req_i, m0_req_i};
+    assign req = {m5_req_i, m4_req_i, m3_req_i, m2_req_i, m1_req_i, m0_req_i};
 
     // 仲裁逻辑
     // 固定优先级仲裁机制
-    // 优先级由高到低：主设备3，主设备0，主设备2，主设备1
+    // 优先级由高到低：主设备0，主设备2，主设备1,主设备3，主设备5，主设备4
     always @ (*) begin
-        if (req[3]) begin
-            grant = grant3;
-            hold_flag_o = `HoldEnable;
-        end else if (req[0]) begin
+        if (req[0]) begin
             grant = grant0;
             hold_flag_o = `HoldEnable;
         end else if (req[2]) begin
             grant = grant2;
             hold_flag_o = `HoldEnable;
-        end else begin
+        end else if (req[1]) begin
             grant = grant1;
             hold_flag_o = `HoldDisable;
+        end else if (req[3]) begin
+            grant = grant3;
+            hold_flag_o = `HoldEnable;
+        end else if (req[5]) begin
+            grant = grant5;
+            hold_flag_o = `HoldEnable;
+        end else begin
+            grant = grant4;
+            hold_flag_o = `HoldEnable;
         end
     end
 
@@ -138,6 +147,8 @@ module rib(
         m1_data_o = `INST_NOP;
         m2_data_o = `ZeroWord;
         m3_data_o = `ZeroWord;
+        m4_data_o = `INST_NOP;
+        m5_data_o = `ZeroWord;
 
         s0_addr_o = `ZeroWord;
         s1_addr_o = `ZeroWord;
@@ -327,7 +338,90 @@ module rib(
                         m3_data_o = s5_data_i;
                     end
                     default: begin
-
+                    end
+                endcase
+            end
+            grant4: begin
+                case (m4_addr_i[31:28])
+                    slave_0: begin
+                        s0_we_o = m4_we_i;
+                        s0_addr_o = {{4'h0}, {m4_addr_i[27:0]}};
+                        s0_data_o = m4_data_i;
+                        m4_data_o = s0_data_i;
+                    end
+                    slave_1: begin
+                        s1_we_o = m4_we_i;
+                        s1_addr_o = {{4'h0}, {m4_addr_i[27:0]}};
+                        s1_data_o = m4_data_i;
+                        m4_data_o = s1_data_i;
+                    end
+                    slave_2: begin
+                        s2_we_o = m4_we_i;
+                        s2_addr_o = {{4'h0}, {m4_addr_i[27:0]}};
+                        s2_data_o = m4_data_i;
+                        m4_data_o = s2_data_i;
+                    end
+                    slave_3: begin
+                        s3_we_o = m4_we_i;
+                        s3_addr_o = {{4'h0}, {m4_addr_i[27:0]}};
+                        s3_data_o = m4_data_i;
+                        m4_data_o = s3_data_i;
+                    end
+                    slave_4: begin
+                        s4_we_o = m4_we_i;
+                        s4_addr_o = {{4'h0}, {m4_addr_i[27:0]}};
+                        s4_data_o = m4_data_i;
+                        m4_data_o = s4_data_i;
+                    end
+                    slave_5: begin
+                        s5_we_o = m4_we_i;
+                        s5_addr_o = {{4'h0}, {m4_addr_i[27:0]}};
+                        s5_data_o = m4_data_i;
+                        m4_data_o = s5_data_i;
+                    end
+                    default: begin
+                    end
+                endcase
+            end
+            grant5: begin
+                case (m5_addr_i[31:28])
+                    slave_0: begin
+                        s0_we_o = m5_we_i;
+                        s0_addr_o = {{4'h0}, {m5_addr_i[27:0]}};
+                        s0_data_o = m5_data_i;
+                        m5_data_o = s0_data_i;
+                    end
+                    slave_1: begin
+                        s1_we_o = m5_we_i;
+                        s1_addr_o = {{4'h0}, {m5_addr_i[27:0]}};
+                        s1_data_o = m5_data_i;
+                        m5_data_o = s1_data_i;
+                    end
+                    slave_2: begin
+                        s2_we_o = m5_we_i;
+                        s2_addr_o = {{4'h0}, {m5_addr_i[27:0]}};
+                        s2_data_o = m5_data_i;
+                        m5_data_o = s2_data_i;
+                    end
+                    slave_3: begin
+                        s3_we_o = m5_we_i;
+                        s3_addr_o = {{4'h0}, {m5_addr_i[27:0]}};
+                        s3_data_o = m5_data_i;
+                        m5_data_o = s3_data_i;
+                    end
+                    slave_4: begin
+                        s4_we_o = m5_we_i;
+                        s4_addr_o = {{4'h0}, {m5_addr_i[27:0]}};
+                        s4_data_o = m5_data_i;
+                        m5_data_o = s4_data_i;
+                    end
+                    slave_5: begin
+                        s5_we_o = m5_we_i;
+                        s5_addr_o = {{4'h0}, {m5_addr_i[27:0]}};
+                        s5_data_o = m5_data_i;
+                        m5_data_o = s5_data_i;
+                    end
+                    default: begin
                     end
                 endcase
             end

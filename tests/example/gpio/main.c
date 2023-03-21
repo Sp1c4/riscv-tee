@@ -11,10 +11,12 @@ int main()
 
     while (1) {
         // 如果GPIO1输入高
-        if (GPIO_REG(GPIO_DATA) & 0x2)
-            GPIO_REG(GPIO_DATA) |= 0x1;  // GPIO0输出高
-        // 如果GPIO1输入低
-        else
-            GPIO_REG(GPIO_DATA) &= ~0x1; // GPIO0输出低
+        // if (GPIO_REG(GPIO_DATA) & 0x2)
+        //     GPIO_REG(GPIO_DATA) |= 0x1;  // GPIO0输出高
+        //     
+        // // 如果GPIO1输入低
+        // else
+        //     GPIO_REG(GPIO_DATA) &= ~0x1; // GPIO0输出低
+        GPIO_REG(GPIO_DATA) &= ~0x1;
     }
 }

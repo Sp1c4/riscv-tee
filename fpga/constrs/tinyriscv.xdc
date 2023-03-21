@@ -43,22 +43,39 @@ set_property IOSTANDARD LVCMOS33 [get_ports {gpio[1]}]
 set_property PACKAGE_PIN M14 [get_ports {gpio[1]}]
 
 # JTAG TCK引脚 34 T20
-set_property IOSTANDARD LVCMOS33 [get_ports jtag_TCK]
-set_property PACKAGE_PIN T20  [get_ports jtag_TCK]
-
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets jtag_TCK]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TCK_0]
+set_property PACKAGE_PIN T20  [get_ports jtag_TCK_0]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets jtag_TCK_0]
 
 # JTAG TMS引脚 36 W15
-set_property IOSTANDARD LVCMOS33 [get_ports jtag_TMS]
-set_property PACKAGE_PIN W15 [get_ports jtag_TMS]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TMS_0]
+set_property PACKAGE_PIN W15 [get_ports jtag_TMS_0]
 
 # JTAG TDI引脚 26 W18
-set_property IOSTANDARD LVCMOS33 [get_ports jtag_TDI]
-set_property PACKAGE_PIN W18 [get_ports jtag_TDI]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TDI_0]
+set_property PACKAGE_PIN W18 [get_ports jtag_TDI_0]
 
 # JTAG TDO引脚 28 V20
-set_property IOSTANDARD LVCMOS33 [get_ports jtag_TDO]
-set_property PACKAGE_PIN V20 [get_ports jtag_TDO]
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TDO_0]
+set_property PACKAGE_PIN V20 [get_ports jtag_TDO_0]
+
+# JTAG TCK引脚 33 U20
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TCK_1]
+set_property PACKAGE_PIN U20  [get_ports jtag_TCK_1]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets jtag_TCK_1]
+
+# JTAG TMS引脚 35 V15
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TMS_1]
+set_property PACKAGE_PIN V15 [get_ports jtag_TMS_1]
+
+# JTAG TDI引脚 25 W19
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TDI_1]
+set_property PACKAGE_PIN W19 [get_ports jtag_TDI_1]
+
+# JTAG TDO引脚 27 W20
+set_property IOSTANDARD LVCMOS33 [get_ports jtag_TDO_1]
+set_property PACKAGE_PIN W20 [get_ports jtag_TDO_1]
+
 
 # SPI MISO引脚 3
 set_property IOSTANDARD LVCMOS33 [get_ports spi_miso]

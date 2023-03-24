@@ -108,10 +108,8 @@ read_verilog -library xil_defaultlib {
   /home/mir/code/riscv-tee/rtl/core/regs.v
   /home/mir/code/riscv-tee/rtl/core/rib.v
   /home/mir/code/riscv-tee/rtl/perips/rom.v
-  /home/mir/code/riscv-tee/rtl/perips/spi.v
   /home/mir/code/riscv-tee/rtl/perips/timer.v
   /home/mir/code/riscv-tee/rtl/core/tinyriscv.v
-  /home/mir/code/riscv-tee/rtl/perips/uart.v
   /home/mir/code/riscv-tee/rtl/soc/tinyriscv_soc_top.v
 }
 OPTRACE "Adding files" END { }

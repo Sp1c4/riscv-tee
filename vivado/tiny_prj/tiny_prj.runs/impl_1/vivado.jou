@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Fri Mar 24 11:25:36 2023
-# Process ID: 141344
+# Start of session at: Fri Mar 24 16:08:01 2023
+# Process ID: 275337
 # Current directory: /home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.runs/impl_1
 # Command line: vivado -log tinyriscv_soc_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source tinyriscv_soc_top.tcl -notrace
 # Log file: /home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.runs/impl_1/tinyriscv_soc_top.vdi
 # Journal file: /home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.runs/impl_1/vivado.jou
-# Running On: sp1c4, OS: Linux, CPU Frequency: 4177.958 MHz, CPU Physical cores: 16, Host memory: 16088 MB
+# Running On: sp1c4, OS: Linux, CPU Frequency: 1845.040 MHz, CPU Physical cores: 16, Host memory: 16088 MB
 #-----------------------------------------------------------
 source tinyriscv_soc_top.tcl -notrace

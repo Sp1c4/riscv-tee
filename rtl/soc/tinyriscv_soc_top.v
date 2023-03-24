@@ -8,14 +8,14 @@ module tinyriscv_soc_top(
     input wire clk,
     input wire rst,
 
-    //output reg over,         // 测试是否完成信号
-    //output reg succ,         // 测试是否成功信号
+    // output reg over,         // 测试是否完成信号
+    // output reg succ,         // 测试是否成功信号
 
     output wire halted_ind,  // jtag是否已经halt住CPU信号
 
-    //input wire uart_debug_pin, // 串口下载使能引脚
-    //output wire uart_tx_pin, // UART发送引脚
-    //input wire uart_rx_pin,  // UART接收引脚
+    // input wire uart_debug_pin, // 串口下载使能引脚
+    // output wire uart_tx_pin, // UART发送引脚
+    // input wire uart_rx_pin,  // UART接收引脚
 
     inout wire[1:0] gpio,    // GPIO引脚
 
@@ -27,12 +27,12 @@ module tinyriscv_soc_top(
     input wire jtag_TCK_1,     // JTAG TCK引脚
     input wire jtag_TMS_1,     // JTAG TMS引脚
     input wire jtag_TDI_1,     // JTAG TDI引脚
-    output wire jtag_TDO_1,    // JTAG TDO引脚
+    output wire jtag_TDO_1    // JTAG TDO引脚
 
-    input wire spi_miso,     // SPI MISO引脚
-    output wire spi_mosi,    // SPI MOSI引脚
-    output wire spi_ss,      // SPI SS引脚
-    output wire spi_clk      // SPI CLK引脚
+    // input wire spi_miso,     // SPI MISO引脚
+    // output wire spi_mosi,    // SPI MOSI引脚
+    // output wire spi_ss,      // SPI SS引脚
+    // output wire spi_clk      // SPI CLK引脚
 
     );
 
@@ -126,7 +126,7 @@ module tinyriscv_soc_top(
     wire s5_we_o;
 
     // rib
-    wire rib_hold_flag_o_0;
+    wire rib_hold_flag_o;
 
     // jtag0 jtag1
 
@@ -193,7 +193,7 @@ module tinyriscv_soc_top(
         .jtag_reg_we_i(jtag_reg_we_o_0),
         .jtag_reg_data_o(jtag_reg_data_i_0),
 
-        .rib_hold_flag_i(rib_hold_flag_o_0),
+        .rib_hold_flag_i(rib_hold_flag_o),
         .jtag_halt_flag_i(jtag_halt_req_o_0),
         .jtag_reset_flag_i(jtag_reset_req_o_0),
 
@@ -217,7 +217,7 @@ module tinyriscv_soc_top(
         .jtag_reg_we_i(jtag_reg_we_o_1),
         .jtag_reg_data_o(jtag_reg_data_i_1),
 
-        .rib_hold_flag_i(rib_hold_flag_o_1),
+        .rib_hold_flag_i(rib_hold_flag_o),
         .jtag_halt_flag_i(jtag_halt_req_o_1),
         .jtag_reset_flag_i(jtag_reset_req_o_1),
 
@@ -225,7 +225,7 @@ module tinyriscv_soc_top(
     );
 
     // rom模块例化
-    rom u_rom(
+    rom u_rom0(
         .clk(clk),
         .rst(rst),
         .we_i(s0_we_o),
@@ -234,14 +234,32 @@ module tinyriscv_soc_top(
         .data_o(s0_data_i)
     );
 
+    rom u_rom1(
+        .clk(clk),
+        .rst(rst),
+        .we_i(s3_we_o),
+        .addr_i(s3_addr_o),
+        .data_i(s3_data_o),
+        .data_o(s3_data_i)
+    );
+
     // ram模块例化
-    ram u_ram(
+    ram u_ram0(
         .clk(clk),
         .rst(rst),
         .we_i(s1_we_o),
         .addr_i(s1_addr_o),
         .data_i(s1_data_o),
         .data_o(s1_data_i)
+    );
+
+    ram u_ram1(
+        .clk(clk),
+        .rst(rst),
+        .we_i(s5_we_o),
+        .addr_i(s5_addr_o),
+        .data_i(s5_data_o),
+        .data_o(s5_data_i)
     );
 
     // timer模块例化
@@ -255,17 +273,17 @@ module tinyriscv_soc_top(
         .int_sig_o(timer0_int)
     );
 
-    // uart模块例化
-    uart uart_0(
-        .clk(clk),
-        .rst(rst),
-        .we_i(s3_we_o),
-        .addr_i(s3_addr_o),
-        .data_i(s3_data_o),
-        .data_o(s3_data_i),
-        .tx_pin(uart_tx_pin),
-        .rx_pin(uart_rx_pin)
-    );
+    // // uart模块例化
+    // uart uart_0(
+    //     .clk(clk),
+    //     .rst(rst),
+    //     .we_i(s3_we_o),
+    //     .addr_i(s3_addr_o),
+    //     .data_i(s3_data_o),
+    //     .data_o(s3_data_i),
+    //     .tx_pin(uart_tx_pin),
+    //     .rx_pin(uart_rx_pin)
+    // );
 
     // io0
     assign gpio[0] = (gpio_ctrl[1:0] == 2'b01)? gpio_data[0]: 1'bz;
@@ -287,19 +305,19 @@ module tinyriscv_soc_top(
         .reg_data(gpio_data)
     );
 
-    // spi模块例化
-    spi spi_0(
-        .clk(clk),
-        .rst(rst),
-        .data_i(s5_data_o),
-        .addr_i(s5_addr_o),
-        .we_i(s5_we_o),
-        .data_o(s5_data_i),
-        .spi_mosi(spi_mosi),
-        .spi_miso(spi_miso),
-        .spi_ss(spi_ss),
-        .spi_clk(spi_clk)
-    );
+    // // spi模块例化
+    // spi spi_0(
+    //     .clk(clk),
+    //     .rst(rst),
+    //     .data_i(s5_data_o),
+    //     .addr_i(s5_addr_o),
+    //     .we_i(s5_we_o),
+    //     .data_o(s5_data_i),
+    //     .spi_mosi(spi_mosi),
+    //     .spi_miso(spi_miso),
+    //     .spi_ss(spi_ss),
+    //     .spi_clk(spi_clk)
+    // );
 
     // rib模块例化
     rib u_rib(
@@ -384,7 +402,7 @@ module tinyriscv_soc_top(
         .s5_data_i(s5_data_i),
         .s5_we_o(s5_we_o),
 
-        .hold_flag_o(rib_hold_flag_o_0)
+        .hold_flag_o(rib_hold_flag_o)
     );
 
     // // 串口下载模块例化

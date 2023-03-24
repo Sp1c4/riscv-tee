@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1679628185" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tinyriscv_soc_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1679645139" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/tinyriscv_soc_top.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="tinyriscv_soc_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="tinyriscv_soc_top.dcp"/>
   <File Type="RDS-UTIL-PB" Name="tinyriscv_soc_top_utilization_synth.pb"/>
@@ -158,13 +158,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../rtl/perips/spi.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../rtl/perips/timer.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -179,13 +172,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../rtl/perips/uart.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../rtl/soc/tinyriscv_soc_top.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -193,7 +179,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../rtl/debug/uart_debug.v">
+    <File Path="$PPRDIR/../../rtl/utils/gen_buf.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -201,7 +187,23 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../rtl/utils/gen_buf.v">
+    <File Path="$PPRDIR/../../rtl/perips/spi.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/perips/uart.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/debug/uart_debug.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

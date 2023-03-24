@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Fri Mar 24 11:26:06 2023
+| Date         : Fri Mar 24 16:08:34 2023
 | Host         : sp1c4 running 64-bit unknown
 | Command      : report_drc -file tinyriscv_soc_top_drc_opted.rpt -pb tinyriscv_soc_top_drc_opted.pb -rpx tinyriscv_soc_top_drc_opted.rpx
 | Design       : tinyriscv_soc_top
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 35
+             Violations found: 19
 +---------+----------+------------------------+------------+
 | Rule    | Severity | Description            | Violations |
 +---------+----------+------------------------+------------+
-| DPIP-1  | Warning  | Input pipelining       | 16         |
-| DPOP-1  | Warning  | PREG Output pipelining | 8          |
-| DPOP-2  | Warning  | MREG Output pipelining | 8          |
+| DPIP-1  | Warning  | Input pipelining       | 8          |
+| DPOP-1  | Warning  | PREG Output pipelining | 4          |
+| DPOP-2  | Warning  | MREG Output pipelining | 4          |
 | PLCK-12 | Warning  | Clock Placer Checks    | 2          |
 | ZPS7-1  | Warning  | PS7 block required     | 1          |
 +---------+----------+------------------------+------------+
@@ -77,46 +77,6 @@ Input pipelining
 DSP u_tinyriscv0/u_ex/mul_temp__2 input u_tinyriscv0/u_ex/mul_temp__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
-DPIP-1#9 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp input u_tinyriscv1/u_ex/mul_temp/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#10 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp input u_tinyriscv1/u_ex/mul_temp/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#11 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__0 input u_tinyriscv1/u_ex/mul_temp__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#12 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__0 input u_tinyriscv1/u_ex/mul_temp__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#13 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__1 input u_tinyriscv1/u_ex/mul_temp__1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#14 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__1 input u_tinyriscv1/u_ex/mul_temp__1/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#15 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__2 input u_tinyriscv1/u_ex/mul_temp__2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#16 Warning
-Input pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__2 input u_tinyriscv1/u_ex/mul_temp__2/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
 DPOP-1#1 Warning
 PREG Output pipelining  
 DSP u_tinyriscv0/u_ex/mul_temp output u_tinyriscv0/u_ex/mul_temp/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
@@ -137,26 +97,6 @@ PREG Output pipelining
 DSP u_tinyriscv0/u_ex/mul_temp__2 output u_tinyriscv0/u_ex/mul_temp__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
-DPOP-1#5 Warning
-PREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp output u_tinyriscv1/u_ex/mul_temp/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#6 Warning
-PREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__0 output u_tinyriscv1/u_ex/mul_temp__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#7 Warning
-PREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__1 output u_tinyriscv1/u_ex/mul_temp__1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#8 Warning
-PREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__2 output u_tinyriscv1/u_ex/mul_temp__2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
 DPOP-2#1 Warning
 MREG Output pipelining  
 DSP u_tinyriscv0/u_ex/mul_temp multiplier stage u_tinyriscv0/u_ex/mul_temp/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
@@ -175,26 +115,6 @@ Related violations: <none>
 DPOP-2#4 Warning
 MREG Output pipelining  
 DSP u_tinyriscv0/u_ex/mul_temp__2 multiplier stage u_tinyriscv0/u_ex/mul_temp__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#5 Warning
-MREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp multiplier stage u_tinyriscv1/u_ex/mul_temp/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#6 Warning
-MREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__0 multiplier stage u_tinyriscv1/u_ex/mul_temp__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#7 Warning
-MREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__1 multiplier stage u_tinyriscv1/u_ex/mul_temp__1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#8 Warning
-MREG Output pipelining  
-DSP u_tinyriscv1/u_ex/mul_temp__2 multiplier stage u_tinyriscv1/u_ex/mul_temp__2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 PLCK-12#1 Warning

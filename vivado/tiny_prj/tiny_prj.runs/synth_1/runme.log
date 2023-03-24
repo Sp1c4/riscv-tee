@@ -21,7 +21,7 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 140568
+INFO: [Synth 8-7075] Helper process launched with PID 274488
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/mir/code/riscv-tee/rtl/utils/full_handshake_rx.v:60]
 WARNING: [Synth 8-6901] identifier 'req' is used before its declaration [/home/mir/code/riscv-tee/rtl/utils/full_handshake_rx.v:68]
@@ -61,11 +61,10 @@ WARNING: [Synth 8-11065] parameter 'REG_DMI' becomes localparam in 'jtag_driver'
 WARNING: [Synth 8-11065] parameter 'REG_DTMCS' becomes localparam in 'jtag_driver' with formal parameter declaration list [/home/mir/code/riscv-tee/rtl/debug/jtag_driver.v:78]
 WARNING: [Synth 8-11065] parameter 'DM_RESP_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/mir/code/riscv-tee/rtl/debug/jtag_top.v:34]
 WARNING: [Synth 8-11065] parameter 'DTM_REQ_BITS' becomes localparam in 'jtag_top' with formal parameter declaration list [/home/mir/code/riscv-tee/rtl/debug/jtag_top.v:35]
-INFO: [Synth 8-11241] undeclared symbol 'rib_hold_flag_o_1', assumed default net type 'wire' [/home/mir/code/riscv-tee/rtl/soc/tinyriscv_soc_top.v:220]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1963.332 ; gain = 374.738 ; free physical = 810 ; free virtual = 6036
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1384.097; parent = 1180.126; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 2929.023; parent = 1966.305; children = 962.719
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1963.719 ; gain = 373.738 ; free physical = 1007 ; free virtual = 4912
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1400.087; parent = 1188.237; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2961.383; parent = 1963.723; children = 997.660
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'tinyriscv_soc_top' [/home/mir/code/riscv-tee/rtl/soc/tinyriscv_soc_top.v:6]
 INFO: [Synth 8-6157] synthesizing module 'tinyriscv' [/home/mir/code/riscv-tee/rtl/core/tinyriscv.v:6]
@@ -115,17 +114,9 @@ INFO: [Synth 8-6155] done synthesizing module 'ram' (0#1) [/home/mir/code/riscv-
 INFO: [Synth 8-6157] synthesizing module 'timer' [/home/mir/code/riscv-tee/rtl/perips/timer.v:21]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/mir/code/riscv-tee/rtl/perips/timer.v:79]
 INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [/home/mir/code/riscv-tee/rtl/perips/timer.v:21]
-INFO: [Synth 8-6157] synthesizing module 'uart' [/home/mir/code/riscv-tee/rtl/perips/uart.v:19]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/mir/code/riscv-tee/rtl/perips/uart.v:102]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/mir/code/riscv-tee/rtl/perips/uart.v:183]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/mir/code/riscv-tee/rtl/perips/uart.v:307]
-INFO: [Synth 8-6155] done synthesizing module 'uart' (0#1) [/home/mir/code/riscv-tee/rtl/perips/uart.v:19]
 INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/mir/code/riscv-tee/rtl/perips/gpio.v:5]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/mir/code/riscv-tee/rtl/perips/gpio.v:46]
 INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [/home/mir/code/riscv-tee/rtl/perips/gpio.v:5]
-INFO: [Synth 8-6157] synthesizing module 'spi' [/home/mir/code/riscv-tee/rtl/perips/spi.v:19]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/mir/code/riscv-tee/rtl/perips/spi.v:140]
-INFO: [Synth 8-6155] done synthesizing module 'spi' (0#1) [/home/mir/code/riscv-tee/rtl/perips/spi.v:19]
 INFO: [Synth 8-6157] synthesizing module 'rib' [/home/mir/code/riscv-tee/rtl/core/rib.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'rib' (0#1) [/home/mir/code/riscv-tee/rtl/core/rib.v:7]
 INFO: [Synth 8-6157] synthesizing module 'jtag_top' [/home/mir/code/riscv-tee/rtl/debug/jtag_top.v:6]
@@ -158,39 +149,10 @@ INFO: [Synth 8-6155] done synthesizing module 'tinyriscv_soc_top' (0#1) [/home/m
 WARNING: [Synth 8-3848] Net raddr_o in module/entity clint does not have driver. [/home/mir/code/riscv-tee/rtl/core/clint.v:56]
 WARNING: [Synth 8-6014] Unused sequential element sbdata0_reg was removed.  [/home/mir/code/riscv-tee/rtl/debug/jtag_dm.v:150]
 WARNING: [Synth 8-6014] Unused sequential element command_reg was removed.  [/home/mir/code/riscv-tee/rtl/debug/jtag_dm.v:151]
-WARNING: [Synth 8-3848] Net rib_hold_flag_o_1 in module/entity tinyriscv_soc_top does not have driver. [/home/mir/code/riscv-tee/rtl/soc/tinyriscv_soc_top.v:220]
 WARNING: [Synth 8-3848] Net int_flag_1 in module/entity tinyriscv_soc_top does not have driver. [/home/mir/code/riscv-tee/rtl/soc/tinyriscv_soc_top.v:150]
 WARNING: [Synth 8-7129] Port clk in module rib is either unconnected or has no load
 WARNING: [Synth 8-7129] Port rst in module rib is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m4_req_i in module rib is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[31] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[30] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[29] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[28] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[27] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[26] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[25] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[24] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[23] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[22] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[21] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[20] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[19] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[18] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[17] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[16] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[15] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[14] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[13] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[12] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[11] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[10] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[9] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[8] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[7] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[6] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[5] in module spi is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[4] in module spi is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[31] in module gpio is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[30] in module gpio is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[29] in module gpio is either unconnected or has no load
@@ -219,30 +181,6 @@ WARNING: [Synth 8-7129] Port addr_i[7] in module gpio is either unconnected or h
 WARNING: [Synth 8-7129] Port addr_i[6] in module gpio is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[5] in module gpio is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[4] in module gpio is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[31] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[30] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[29] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[28] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[27] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[26] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[25] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[24] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[23] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[22] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[21] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[20] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[19] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[18] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[17] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[16] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[15] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[14] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[13] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[12] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[11] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[10] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[9] in module uart is either unconnected or has no load
-WARNING: [Synth 8-7129] Port addr_i[8] in module uart is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[31] in module timer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[30] in module timer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[29] in module timer is either unconnected or has no load
@@ -260,31 +198,107 @@ WARNING: [Synth 8-7129] Port addr_i[18] in module timer is either unconnected or
 WARNING: [Synth 8-7129] Port addr_i[17] in module timer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[16] in module timer is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr_i[15] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[14] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[13] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[12] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[11] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[10] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[9] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[8] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[7] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[6] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[5] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[4] in module timer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[31] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[30] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[29] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[28] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[27] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[26] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[25] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[24] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[23] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[22] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[21] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[20] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[19] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[18] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[17] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[16] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[15] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[14] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[1] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[0] in module ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[31] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[30] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[29] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[28] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[27] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[26] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[25] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[24] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[23] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[22] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[21] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[20] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[19] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[18] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[17] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[16] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[15] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[14] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[1] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr_i[0] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port raddr_o[31] in module clint is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2059.270 ; gain = 470.676 ; free physical = 849 ; free virtual = 6081
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1384.097; parent = 1180.126; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3021.992; parent = 2059.273; children = 962.719
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2055.688 ; gain = 465.707 ; free physical = 1049 ; free virtual = 4965
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1400.087; parent = 1188.237; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3053.352; parent = 2055.691; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2071.145 ; gain = 482.551 ; free physical = 848 ; free virtual = 6077
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1384.097; parent = 1180.126; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3033.867; parent = 2071.148; children = 962.719
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2073.500 ; gain = 483.520 ; free physical = 1041 ; free virtual = 4957
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1400.087; parent = 1188.237; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3071.164; parent = 2073.504; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2071.145 ; gain = 482.551 ; free physical = 847 ; free virtual = 6076
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1384.097; parent = 1180.126; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3033.867; parent = 2071.148; children = 962.719
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2073.500 ; gain = 483.520 ; free physical = 1041 ; free virtual = 4957
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1400.087; parent = 1188.237; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3071.164; parent = 2073.504; children = 997.660
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2071.145 ; gain = 0.000 ; free physical = 856 ; free virtual = 6085
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2073.500 ; gain = 0.000 ; free physical = 1022 ; free virtual = 4938
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc]
+WARNING: [Vivado 12-584] No ports matched 'spi_miso'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_miso'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_mosi'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_mosi'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:86]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_ss'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_ss'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_clk'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_clk'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 CRITICAL WARNING: [Netlist 29-177] Cannot set property 'BITSTREAM.CONFIG.SPI_BUSWIDTH' because the property does not exist. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:96]
 Resolution: Create this property using create_property command before setting it.
 CRITICAL WARNING: [Netlist 29-154] Cannot set property 'CONFIG_MODE' because incorrect value 'SPIx4' specified. Expecting type 'enum' with possible values of 'B_SCAN'. [/home/mir/code/riscv-tee/fpga/constrs/tinyriscv.xdc:97]
@@ -296,35 +310,35 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/tinyriscv_soc_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2234.895 ; gain = 0.000 ; free physical = 676 ; free virtual = 5905
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2227.250 ; gain = 0.000 ; free physical = 889 ; free virtual = 4813
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2234.895 ; gain = 0.000 ; free physical = 676 ; free virtual = 5905
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2227.250 ; gain = 0.000 ; free physical = 888 ; free virtual = 4811
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2234.895 ; gain = 646.301 ; free physical = 817 ; free virtual = 6042
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1406.642; parent = 1202.702; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3165.602; parent = 2202.883; children = 962.719
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2227.250 ; gain = 637.270 ; free physical = 962 ; free virtual = 4872
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1419.194; parent = 1207.376; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3192.898; parent = 2195.238; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2234.895 ; gain = 646.301 ; free physical = 817 ; free virtual = 6042
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1406.642; parent = 1202.702; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3165.602; parent = 2202.883; children = 962.719
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2227.250 ; gain = 637.270 ; free physical = 962 ; free virtual = 4872
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1419.194; parent = 1207.376; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3192.898; parent = 2195.238; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2234.895 ; gain = 646.301 ; free physical = 818 ; free virtual = 6043
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1406.642; parent = 1202.702; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3165.602; parent = 2202.883; children = 962.719
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2227.250 ; gain = 637.270 ; free physical = 962 ; free virtual = 4872
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1419.194; parent = 1207.376; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3192.898; parent = 2195.238; children = 997.660
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
 INFO: [Synth 8-802] inferred FSM for state register 'csr_state_reg' in module 'clint'
@@ -391,9 +405,9 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'f
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtag_state_reg' using encoding 'one-hot' in module 'jtag_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2234.895 ; gain = 646.301 ; free physical = 800 ; free virtual = 6019
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1406.642; parent = 1202.702; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3165.602; parent = 2202.883; children = 962.719
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2227.250 ; gain = 637.270 ; free physical = 789 ; free virtual = 4755
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1419.194; parent = 1207.376; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3192.898; parent = 2195.238; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -401,43 +415,37 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   64 Bit       Adders := 2     
-	   2 Input   32 Bit       Adders := 25    
+	   2 Input   32 Bit       Adders := 24    
 	   3 Input   32 Bit       Adders := 4     
-	   2 Input    9 Bit       Adders := 1     
-	   2 Input    5 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 3     
 	   2 Input    2 Bit       Adders := 4     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 2     
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
 	               40 Bit    Registers := 14    
-	               32 Bit    Registers := 97    
-	               16 Bit    Registers := 1     
-	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 5     
-	                5 Bit    Registers := 9     
-	                4 Bit    Registers := 4     
+	               32 Bit    Registers := 90    
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 8     
 	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 79    
+	                1 Bit    Registers := 66    
 +---Muxes : 
 	   4 Input   40 Bit        Muxes := 8     
 	   3 Input   40 Bit        Muxes := 6     
 	   2 Input   40 Bit        Muxes := 2     
-	   2 Input   32 Bit        Muxes := 232   
+	   2 Input   32 Bit        Muxes := 223   
 	   9 Input   32 Bit        Muxes := 4     
 	   8 Input   32 Bit        Muxes := 6     
 	  13 Input   32 Bit        Muxes := 2     
 	   6 Input   32 Bit        Muxes := 12    
-	   4 Input   32 Bit        Muxes := 25    
+	   4 Input   32 Bit        Muxes := 24    
 	  11 Input   32 Bit        Muxes := 10    
 	   7 Input   32 Bit        Muxes := 42    
-	   5 Input   32 Bit        Muxes := 18    
+	   5 Input   32 Bit        Muxes := 16    
 	   3 Input   32 Bit        Muxes := 3     
 	   2 Input   31 Bit        Muxes := 2     
 	   2 Input   28 Bit        Muxes := 36    
 	   7 Input   28 Bit        Muxes := 36    
-	   2 Input   16 Bit        Muxes := 35    
+	   2 Input   16 Bit        Muxes := 34    
 	  16 Input   16 Bit        Muxes := 2     
 	  13 Input   12 Bit        Muxes := 2     
 	   3 Input   12 Bit        Muxes := 2     
@@ -446,34 +454,34 @@ Detailed RTL Component Info :
 	   5 Input   10 Bit        Muxes := 2     
 	   2 Input    8 Bit        Muxes := 2     
 	   4 Input    8 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 41    
+	   2 Input    5 Bit        Muxes := 40    
 	   3 Input    5 Bit        Muxes := 4     
 	  13 Input    5 Bit        Muxes := 2     
 	   6 Input    5 Bit        Muxes := 2     
 	   9 Input    4 Bit        Muxes := 4     
-	   5 Input    4 Bit        Muxes := 3     
-	   2 Input    4 Bit        Muxes := 11    
+	   5 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 7     
 	   4 Input    4 Bit        Muxes := 2     
 	   3 Input    4 Bit        Muxes := 4     
 	  13 Input    3 Bit        Muxes := 6     
-	   2 Input    3 Bit        Muxes := 19    
+	   2 Input    3 Bit        Muxes := 18    
 	  11 Input    3 Bit        Muxes := 2     
 	   3 Input    3 Bit        Muxes := 1     
 	   6 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 4     
 	   8 Input    3 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 19    
+	   2 Input    2 Bit        Muxes := 18    
 	   3 Input    2 Bit        Muxes := 6     
 	   5 Input    2 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 176   
+	   2 Input    1 Bit        Muxes := 135   
 	   7 Input    1 Bit        Muxes := 74    
 	   8 Input    1 Bit        Muxes := 16    
-	   3 Input    1 Bit        Muxes := 33    
+	   3 Input    1 Bit        Muxes := 30    
 	  13 Input    1 Bit        Muxes := 4     
-	   4 Input    1 Bit        Muxes := 66    
+	   4 Input    1 Bit        Muxes := 56    
 	  11 Input    1 Bit        Muxes := 8     
 	   6 Input    1 Bit        Muxes := 6     
-	   5 Input    1 Bit        Muxes := 32    
+	   5 Input    1 Bit        Muxes := 28    
 	  10 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -504,9 +512,9 @@ DSP Report: Generating DSP mul_temp, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 DSP Report: operator mul_temp is absorbed into DSP mul_temp.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 2234.895 ; gain = 646.301 ; free physical = 471 ; free virtual = 5057
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1503.926; parent = 1300.014; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3165.602; parent = 2202.883; children = 962.719
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 2227.250 ; gain = 637.270 ; free physical = 375 ; free virtual = 4413
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1490.142; parent = 1278.354; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3192.898; parent = 2195.238; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -518,8 +526,10 @@ Distributed RAM: Preliminary Mapping Report (see note below)
 +------------------+-----------------+-----------+----------------------+------------------+
 |tinyriscv:        | u_regs/regs_reg | Implied   | 32 x 32              | RAM32M x 18      | 
 |tinyriscv:        | u_regs/regs_reg | Implied   | 32 x 32              | RAM32M x 18      | 
-|tinyriscv_soc_top | u_rom/_rom_reg  | Implied   | 4 K x 32             | RAM256X1S x 512  | 
-|tinyriscv_soc_top | u_ram/_ram_reg  | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_rom0/_rom_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_rom1/_rom_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_ram0/_ram_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_ram1/_ram_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
 +------------------+-----------------+-----------+----------------------+------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
@@ -542,17 +552,17 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 2234.895 ; gain = 646.301 ; free physical = 263 ; free virtual = 4767
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1578.464; parent = 1374.553; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3165.602; parent = 2202.883; children = 962.719
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 2227.250 ; gain = 637.270 ; free physical = 663 ; free virtual = 4624
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1593.688; parent = 1381.901; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3192.898; parent = 2195.238; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:42 . Memory (MB): peak = 2280.926 ; gain = 692.332 ; free physical = 241 ; free virtual = 4411
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3243.648; parent = 2280.930; children = 962.719
+Finished Timing Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:36 . Memory (MB): peak = 2280.281 ; gain = 690.301 ; free physical = 213 ; free virtual = 4124
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1706.087; parent = 1494.300; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.945; parent = 2280.285; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -564,8 +574,10 @@ Distributed RAM: Final Mapping Report
 +------------------+-----------------+-----------+----------------------+------------------+
 |tinyriscv:        | u_regs/regs_reg | Implied   | 32 x 32              | RAM32M x 18      | 
 |tinyriscv:        | u_regs/regs_reg | Implied   | 32 x 32              | RAM32M x 18      | 
-|tinyriscv_soc_top | u_rom/_rom_reg  | Implied   | 4 K x 32             | RAM256X1S x 512  | 
-|tinyriscv_soc_top | u_ram/_ram_reg  | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_rom0/_rom_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_rom1/_rom_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_ram0/_ram_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
+|tinyriscv_soc_top | u_ram1/_ram_reg | Implied   | 4 K x 32             | RAM256X1S x 512  | 
 +------------------+-----------------+-----------+----------------------+------------------+
 
 ---------------------------------------------------------------------------------
@@ -575,9 +587,9 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:49 ; elapsed = 00:01:52 . Memory (MB): peak = 2308.941 ; gain = 720.348 ; free physical = 219 ; free virtual = 4272
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3271.664; parent = 2308.945; children = 962.719
+Finished Technology Mapping : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 2313.930 ; gain = 723.949 ; free physical = 280 ; free virtual = 4099
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3311.594; parent = 2313.934; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -595,49 +607,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 238 ; free virtual = 4265
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished IO Insertion : Time (s): cpu = 00:01:44 ; elapsed = 00:01:48 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 294 ; free virtual = 4115
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 204 ; free virtual = 4231
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:44 ; elapsed = 00:01:48 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 295 ; free virtual = 4116
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:55 ; elapsed = 00:01:59 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 278 ; free virtual = 4303
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 314 ; free virtual = 4137
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:55 ; elapsed = 00:01:59 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 286 ; free virtual = 4308
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 318 ; free virtual = 4142
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:55 ; elapsed = 00:01:59 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 309 ; free virtual = 4288
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 318 ; free virtual = 4142
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:55 ; elapsed = 00:02:00 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 269 ; free virtual = 4248
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 318 ; free virtual = 4142
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -647,10 +659,6 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|ex          | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex          | PCIN>>17+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex          | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|ex          | PCIN>>17+A*B | 17     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ex          | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ex          | PCIN>>17+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |ex          | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
@@ -669,55 +677,55 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     3|
-|2     |CARRY4    |   355|
-|3     |DSP48E1   |     8|
-|4     |LUT1      |   525|
-|5     |LUT2      |  1243|
-|6     |LUT3      |   533|
-|7     |LUT4      |  1863|
-|8     |LUT5      |  1323|
-|9     |LUT6      |  4115|
-|10    |MUXF7     |   132|
-|11    |MUXF8     |     2|
-|12    |RAM256X1S |  1024|
-|13    |RAM32M    |    30|
-|14    |RAM32X1D  |    12|
-|15    |FDCE      |  1050|
+|2     |CARRY4    |   192|
+|3     |DSP48E1   |     4|
+|4     |LUT1      |   263|
+|5     |LUT2      |  1128|
+|6     |LUT3      |   622|
+|7     |LUT4      |   836|
+|8     |LUT5      |   630|
+|9     |LUT6      |  2715|
+|10    |MUXF7     |   247|
+|11    |MUXF8     |    70|
+|12    |RAM256X1S |  2048|
+|13    |RAM32M    |    20|
+|14    |RAM32X1D  |     8|
+|15    |FDCE      |  1049|
 |16    |FDPE      |    22|
-|17    |FDRE      |  2338|
-|18    |FDSE      |    30|
-|19    |IBUF      |     9|
+|17    |FDRE      |  1199|
+|18    |FDSE      |    14|
+|19    |IBUF      |     8|
 |20    |IOBUF     |     2|
-|21    |OBUF      |     6|
+|21    |OBUF      |     3|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:56 ; elapsed = 00:02:00 . Memory (MB): peak = 2314.879 ; gain = 726.285 ; free physical = 265 ; free virtual = 4245
-Synthesis current peak Physical Memory [PSS] (MB): peak = 1700.632; parent = 1496.721; children = 203.971
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3277.602; parent = 2314.883; children = 962.719
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:46 ; elapsed = 00:01:50 . Memory (MB): peak = 2319.867 ; gain = 729.887 ; free physical = 318 ; free virtual = 4142
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1726.595; parent = 1514.808; children = 211.850
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3317.531; parent = 2319.871; children = 997.660
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:52 ; elapsed = 00:01:57 . Memory (MB): peak = 2314.879 ; gain = 562.535 ; free physical = 318 ; free virtual = 4297
-Synthesis Optimization Complete : Time (s): cpu = 00:01:56 ; elapsed = 00:02:00 . Memory (MB): peak = 2314.887 ; gain = 726.285 ; free physical = 318 ; free virtual = 4297
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:43 ; elapsed = 00:01:48 . Memory (MB): peak = 2319.867 ; gain = 576.137 ; free physical = 376 ; free virtual = 4200
+Synthesis Optimization Complete : Time (s): cpu = 00:01:46 ; elapsed = 00:01:51 . Memory (MB): peak = 2319.875 ; gain = 729.887 ; free physical = 376 ; free virtual = 4200
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2314.887 ; gain = 0.000 ; free physical = 392 ; free virtual = 4374
-INFO: [Netlist 29-17] Analyzing 1565 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2322.836 ; gain = 0.000 ; free physical = 486 ; free virtual = 4311
+INFO: [Netlist 29-17] Analyzing 2591 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2338.891 ; gain = 0.000 ; free physical = 306 ; free virtual = 4299
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2349.816 ; gain = 0.000 ; free physical = 415 ; free virtual = 4243
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1068 instances were transformed.
+  A total of 2078 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 1024 instances
-  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 30 instances
-  RAM32X1D => RAM32X1D (RAMD32(x2)): 12 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 2048 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 20 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 8 instances
 
-Synth Design complete, checksum: be9bb6c7
+Synth Design complete, checksum: 90410af1
 INFO: [Common 17-83] Releasing license: Synthesis
-109 Infos, 143 Warnings, 3 Critical Warnings and 0 Errors encountered.
+100 Infos, 150 Warnings, 11 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:05 ; elapsed = 00:02:07 . Memory (MB): peak = 2338.891 ; gain = 1015.898 ; free physical = 540 ; free virtual = 4533
+synth_design: Time (s): cpu = 00:01:57 ; elapsed = 00:01:59 . Memory (MB): peak = 2349.816 ; gain = 1089.430 ; free physical = 644 ; free virtual = 4472
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.runs/synth_1/tinyriscv_soc_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file tinyriscv_soc_top_utilization_synth.rpt -pb tinyriscv_soc_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar 24 11:25:24 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 24 16:07:49 2023...

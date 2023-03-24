@@ -120,17 +120,17 @@ module rib(
     // 固定优先级仲裁机制
     // 优先级由高到低：主设备0，主设备2，主设备1,主设备3，主设备5，主设备4
     always @ (*) begin
-        if (req[0]) begin
-            grant = grant0;
-            hold_flag_o = `HoldEnable;
-        end else if (req[3]) begin
-            grant = grant3;
-            hold_flag_o = `HoldEnable;
-        end else if (req[2]) begin
+        if (req[2]) begin
             grant = grant2;
             hold_flag_o = `HoldEnable;
         end else if (req[5]) begin
             grant = grant5;
+            hold_flag_o = `HoldEnable;
+        end else if (req[0]) begin
+            grant = grant0;
+            hold_flag_o = `HoldEnable;
+        end else if (req[3]) begin
+            grant = grant3;
             hold_flag_o = `HoldEnable;
         end else if (req[1]) begin
             grant = grant1;

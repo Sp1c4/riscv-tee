@@ -8,8 +8,8 @@ module tinyriscv_soc_top(
     input wire clk,
     input wire rst,
 
-    output reg over,         // 测试是否完成信号
-    output reg succ,         // 测试是否成功信号
+    //output reg over,         // 测试是否完成信号
+    //output reg succ,         // 测试是否成功信号
 
     output wire halted_ind,  // jtag是否已经halt住CPU信号
 
@@ -165,15 +165,15 @@ module tinyriscv_soc_top(
     assign halted_ind = ~jtag_halt_req_o_0;
 
 
-    always @ (posedge clk) begin
-        if (rst == `RstEnable) begin
-            over <= 1'b1;
-            succ <= 1'b1;
-        end else begin
-            over <= ~u_tinyriscv0.u_regs.regs[26];  // when = 1, run over
-            succ <= ~u_tinyriscv0.u_regs.regs[27];  // when = 1, run succ, otherwise fail
-        end
-    end
+    //always @ (posedge clk) begin
+    //    if (rst == `RstEnable) begin
+    //        over <= 1'b1;
+    //        succ <= 1'b1;
+    //    end else begin
+    //        over <= ~u_tinyriscv0.u_regs.regs[26];  // when = 1, run over
+    //        succ <= ~u_tinyriscv0.u_regs.regs[27];  // when = 1, run succ, otherwise fail
+    //    end
+    //end
 
     // tinyriscv处理器核模块例化
     tinyriscv u_tinyriscv0(

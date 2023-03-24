@@ -123,21 +123,21 @@ module rib(
         if (req[0]) begin
             grant = grant0;
             hold_flag_o = `HoldEnable;
-        end else if (req[2]) begin
-            grant = grant2;
-            hold_flag_o = `HoldEnable;
-        end else if (req[1]) begin
-            grant = grant1;
-            hold_flag_o = `HoldDisable;
         end else if (req[3]) begin
             grant = grant3;
+            hold_flag_o = `HoldEnable;
+        end else if (req[2]) begin
+            grant = grant2;
             hold_flag_o = `HoldEnable;
         end else if (req[5]) begin
             grant = grant5;
             hold_flag_o = `HoldEnable;
+        end else if (req[1]) begin
+            grant = grant1;
+            hold_flag_o = `HoldDisable;
         end else begin
             grant = grant4;
-            hold_flag_o = `HoldEnable;
+            hold_flag_o = `HoldDisable;
         end
     end
 

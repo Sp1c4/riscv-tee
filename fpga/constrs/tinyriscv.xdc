@@ -11,12 +11,12 @@ set_property IOSTANDARD LVCMOS33 [get_ports rst]
 set_property PACKAGE_PIN M15 [get_ports rst]
 
 # 程序执行完毕指示引脚 LED1
-set_property IOSTANDARD LVCMOS33 [get_ports over]
-set_property PACKAGE_PIN J14 [get_ports over]
+#set_property IOSTANDARD LVCMOS33 [get_ports over]
+#set_property PACKAGE_PIN J14 [get_ports over]
 
 # 程序执行成功指示引脚 LED2
-set_property IOSTANDARD LVCMOS33 [get_ports succ]
-set_property PACKAGE_PIN K14 [get_ports succ]
+#set_property IOSTANDARD LVCMOS33 [get_ports succ]
+#set_property PACKAGE_PIN K14 [get_ports succ]
 
 # CPU停住指示引脚 LED3
 set_property IOSTANDARD LVCMOS33 [get_ports halted_ind]
@@ -38,9 +38,9 @@ set_property PACKAGE_PIN J18 [get_ports halted_ind]
 set_property IOSTANDARD LVCMOS33 [get_ports {gpio[0]}]
 set_property PACKAGE_PIN H18 [get_ports {gpio[0]}]
 
-# GPIO1引脚 KEY2
+# GPIO1引脚 LED2
 set_property IOSTANDARD LVCMOS33 [get_ports {gpio[1]}]
-set_property PACKAGE_PIN M14 [get_ports {gpio[1]}]
+set_property PACKAGE_PIN K14 [get_ports {gpio[1]}]
 
 # JTAG TCK引脚 34 T20
 set_property IOSTANDARD LVCMOS33 [get_ports jtag_TCK_0]

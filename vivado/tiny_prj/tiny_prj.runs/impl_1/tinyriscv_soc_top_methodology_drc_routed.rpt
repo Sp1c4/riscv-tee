@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Tue Mar 21 17:39:34 2023
+| Date         : Fri Mar 24 11:30:15 2023
 | Host         : sp1c4 running 64-bit unknown
 | Command      : report_methodology -file tinyriscv_soc_top_methodology_drc_routed.rpt -pb tinyriscv_soc_top_methodology_drc_routed.pb -rpx tinyriscv_soc_top_methodology_drc_routed.rpx
 | Design       : tinyriscv_soc_top
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 1506
+             Violations found: 1508
 +-----------+------------------+-----------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                               | Violations |
 +-----------+------------------+-----------------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                               | 468        |
 | SYNTH-5   | Warning          | Mapped onto distributed RAM because of timing constraints | 1024       |
-| SYNTH-10  | Warning          | Wide multiplier                                           | 4          |
-| TIMING-18 | Warning          | Missing input or output delay                             | 10         |
+| SYNTH-10  | Warning          | Wide multiplier                                           | 8          |
+| TIMING-18 | Warning          | Missing input or output delay                             | 8          |
 +-----------+------------------+-----------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -7515,6 +7515,26 @@ Wide multiplier
 Detected multiplier at u_tinyriscv0/u_ex/mul_temp__2 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
 Related violations: <none>
 
+SYNTH-10#5 Warning
+Wide multiplier  
+Detected multiplier at u_tinyriscv1/u_ex/mul_temp of size 16x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#6 Warning
+Wide multiplier  
+Detected multiplier at u_tinyriscv1/u_ex/mul_temp__0 of size 16x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#7 Warning
+Wide multiplier  
+Detected multiplier at u_tinyriscv1/u_ex/mul_temp__1 of size 18x18, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
+SYNTH-10#8 Warning
+Wide multiplier  
+Detected multiplier at u_tinyriscv1/u_ex/mul_temp__2 of size 18x16, it is decomposed from a wide multipler into 4 DSP blocks.
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on gpio[0] relative to clock(s) sys_clk_pin
@@ -7542,27 +7562,17 @@ Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on over relative to clock(s) sys_clk_pin
+An output delay is missing on spi_clk relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on spi_clk relative to clock(s) sys_clk_pin
+An output delay is missing on spi_mosi relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on spi_mosi relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#9 Warning
-Missing input or output delay  
 An output delay is missing on spi_ss relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#10 Warning
-Missing input or output delay  
-An output delay is missing on succ relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 

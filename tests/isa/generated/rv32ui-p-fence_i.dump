@@ -5,13 +5,13 @@ generated/rv32ui-p-fence_i:     file format elf32-littleriscv
 Disassembly of section .text.init:
 
 00000000 <_start>:
-   0:	00000d13          	li	s10,0
-   4:	00000d93          	li	s11,0
-   8:	06f00693          	li	a3,111
-   c:	00001517          	auipc	a0,0x1
-  10:	ff451503          	lh	a0,-12(a0) # 1000 <begin_signature>
-  14:	00001597          	auipc	a1,0x1
-  18:	fee59583          	lh	a1,-18(a1) # 1002 <begin_signature+0x2>
+   0:	10005073          	csrwi	sstatus,0
+   4:	06f00693          	li	a3,111
+   8:	00001517          	auipc	a0,0x1
+   c:	ff851503          	lh	a0,-8(a0) # 1000 <begin_signature>
+  10:	00001597          	auipc	a1,0x1
+  14:	ff259583          	lh	a1,-14(a1) # 1002 <begin_signature+0x2>
+  18:	00000013          	nop
   1c:	00000013          	nop
   20:	00000013          	nop
   24:	00000013          	nop
@@ -62,21 +62,20 @@ Disassembly of section .text.init:
   c8:	30900e93          	li	t4,777
   cc:	00300193          	li	gp,3
   d0:	01d69463          	bne	a3,t4,d8 <fail>
-  d4:	00301863          	bne	zero,gp,e4 <pass>
+  d4:	00301663          	bne	zero,gp,e0 <pass>
 
 000000d8 <fail>:
-  d8:	00100d13          	li	s10,1
-  dc:	00000d93          	li	s11,0
+  d8:	1000d073          	csrwi	sstatus,1
 
-000000e0 <loop_fail>:
-  e0:	0000006f          	j	e0 <loop_fail>
+000000dc <loop_fail>:
+  dc:	0000006f          	j	dc <loop_fail>
 
-000000e4 <pass>:
-  e4:	00100d13          	li	s10,1
-  e8:	00100d93          	li	s11,1
+000000e0 <pass>:
+  e0:	1001d073          	csrwi	sstatus,3
 
-000000ec <loop_pass>:
-  ec:	0000006f          	j	ec <loop_pass>
+000000e4 <loop_pass>:
+  e4:	0000006f          	j	e4 <loop_pass>
+  e8:	0000                	unimp
 	...
 
 Disassembly of section .data:
@@ -92,3 +91,20 @@ Disassembly of section .tohost:
 
 00001080 <fromhost>:
 	...
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1d41                	addi	s10,s10,-16
+   2:	0000                	unimp
+   4:	7200                	flw	fs0,32(a2)
+   6:	7369                	lui	t1,0xffffa
+   8:	01007663          	bgeu	zero,a6,14 <_start+0x14>
+   c:	00000013          	nop
+  10:	7205                	lui	tp,0xfffe1
+  12:	3376                	fld	ft6,376(sp)
+  14:	6932                	flw	fs2,12(sp)
+  16:	7032                	flw	ft0,44(sp)
+  18:	0030                	addi	a2,sp,8
+  1a:	0108                	addi	a0,sp,128
+  1c:	0b0a                	slli	s6,s6,0x2

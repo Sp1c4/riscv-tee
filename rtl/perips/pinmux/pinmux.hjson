@@ -1,0 +1,83 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{ name: "pinmux",
+  clocking: [{clock: "clk_i", reset: "rst_ni"}],
+  bus_interfaces: [
+    { protocol: "tlul", direction: "device" }
+  ],
+  regwidth: "32",
+  registers: [
+    { name: "CTRL",
+      desc: "Pinmux control register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "1:0",
+          name: "IO0_MUX",
+          desc: "IO0 mux",
+        }
+        { bits: "3:2",
+          name: "IO1_MUX",
+          desc: "IO1 mux",
+        }
+        { bits: "5:4",
+          name: "IO2_MUX",
+          desc: "IO2 mux",
+        }
+        { bits: "7:6",
+          name: "IO3_MUX",
+          desc: "IO3 mux",
+        }
+        { bits: "9:8",
+          name: "IO4_MUX",
+          desc: "IO4 mux",
+        }
+        { bits: "11:10",
+          name: "IO5_MUX",
+          desc: "IO5 mux",
+        }
+        { bits: "13:12",
+          name: "IO6_MUX",
+          desc: "IO6 mux",
+        }
+        { bits: "15:14",
+          name: "IO7_MUX",
+          desc: "IO7 mux",
+        }
+        { bits: "17:16",
+          name: "IO8_MUX",
+          desc: "IO8 mux",
+        }
+        { bits: "19:18",
+          name: "IO9_MUX",
+          desc: "IO9 mux",
+        }
+        { bits: "21:20",
+          name: "IO10_MUX",
+          desc: "IO10 mux",
+        }
+        { bits: "23:22",
+          name: "IO11_MUX",
+          desc: "IO11 mux",
+        }
+        { bits: "25:24",
+          name: "IO12_MUX",
+          desc: "IO12 mux",
+        }
+        { bits: "27:26",
+          name: "IO13_MUX",
+          desc: "IO13 mux",
+        }
+        { bits: "29:28",
+          name: "IO14_MUX",
+          desc: "IO14 mux",
+        }
+        { bits: "31:30",
+          name: "IO15_MUX",
+          desc: "IO15 mux",
+        }
+      ]
+    }
+  ]
+}

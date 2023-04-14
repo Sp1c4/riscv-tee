@@ -13,7 +13,7 @@
 // RV Compliance Macros
 //-----------------------------------------------------------------------
 
-#define TESTUTIL_BASE 0x10000000
+#define TESTUTIL_BASE 0x20000000
 #define TESTUTIL_ADDR_HALT (TESTUTIL_BASE + 0x10)
 #define TESTUTIL_ADDR_BEGIN_SIGNATURE (TESTUTIL_BASE + 0x8)
 #define TESTUTIL_ADDR_END_SIGNATURE (TESTUTIL_BASE + 0xc)

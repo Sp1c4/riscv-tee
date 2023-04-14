@@ -1,18 +1,13 @@
-
-
-SHELL=cmd
-
 export RISCV_TARGET       ?= tinyriscv
-export RISCV_PREFIX       ?= ../../../../tools/gnu-mcu-eclipse-riscv-none-gcc-8.2.0-2.2-20190521-0004-win64/bin/riscv-none-embed-
+export RISCV_PREFIX       ?= /opt/riscv32/bin/riscv32-unknown-elf-
 
-CURDIR = $(shell echo %cd%)
+CURDIR = $(shell pwd)
 
-export ROOTDIR    = $(subst \,/,$(CURDIR))
+export ROOTDIR    = $(CURDIR)
 export TARGETDIR ?= $(ROOTDIR)/riscv-target
-
+export BIN_TO_MEM = $(CURDIR)/../../tools/BinToMem.py
 
 default: all
-
 
 all:
 	$(MAKE) RISCV_TARGET=$(RISCV_TARGET) RISCV_DEVICE=rv32i RISCV_PREFIX=$(RISCV_PREFIX) RISCV_ISA=rv32i run -C $(ROOTDIR)/riscv-test-suite/rv32i
@@ -21,8 +16,4 @@ all:
 	$(MAKE) RISCV_TARGET=$(RISCV_TARGET) RISCV_DEVICE=rv32Zifencei RISCV_PREFIX=$(RISCV_PREFIX) RISCV_ISA=rv32Zifencei run -C $(ROOTDIR)/riscv-test-suite/rv32Zifencei
 
 clean:
-	clean -C $(ROOTDIR)/riscv-test-suite/rv32i
-	clean -C $(ROOTDIR)/riscv-test-suite/rv32im
-	clean -C $(ROOTDIR)/riscv-test-suite/rv32Zicsr
-	clean -C $(ROOTDIR)/riscv-test-suite/rv32Zifencei
-
+	rm -rf build_generated

@@ -1,0 +1,126 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{ name: "spi",
+  clocking: [{clock: "clk_i", reset: "rst_ni"}],
+  bus_interfaces: [
+    { protocol: "tlul", direction: "device" }
+  ],
+  regwidth: "32",
+  registers: [
+    { name: "CTRL0",
+      desc: "SPI control 0 register",
+      swaccess: "rw",
+      hwaccess: "hrw",
+      hwqe: "true",
+      fields: [
+        { bits: "0",
+          name: "ENABLE",
+          desc: "SPI enable",
+        }
+        { bits: "1",
+          name: "INT_EN",
+          desc: "SPI interrupt enable",
+        }
+        { bits: "2",
+          name: "INT_PENDING",
+          swaccess: "rw1c",
+          desc: "SPI master transmit completely interrupt pending",
+        }
+        { bits: "3",
+          name: "ROLE_MODE",
+          desc: "SPI role mode, 0: master, 1: slave",
+        }
+        { bits: "5:4",
+          name: "CP_MODE",
+          desc: "SPI CPOL and CPHA mode",
+        }
+        { bits: "7:6",
+          name: "SPI_MODE",
+          desc: "0: normal, 1: dual, 2: quad",
+        }
+        { bits: "8",
+          name: "READ",
+          desc: "0: write, 1: read",
+        }
+        { bits: "9",
+          name: "MSB_FIRST",
+          desc: "0: lsb, 1: msb",
+        }
+        { bits: "10",
+          name: "SS_SW_CTRL",
+          desc: "ss ctrl by software. 0: hw, 1: sw",
+        }
+        { bits: "11",
+          name: "SS_LEVEL",
+          desc: "ss output level. valid only when bit[10]=1",
+        }
+        { bits: "15:12",
+          name: "SS_DELAY",
+          desc: "SPI ss signal active or inactive how many spi clk",
+        }
+        { bits: "16",
+          name: "TX_FIFO_RESET",
+          swaccess: "rw1c",
+          desc: "reset tx fifo",
+        }
+        { bits: "17",
+          name: "RX_FIFO_RESET",
+          swaccess: "rw1c",
+          desc: "reset rx fifo",
+        }
+        { bits: "31:29",
+          name: "CLK_DIV",
+          desc: "SPI clock divider count",
+        }
+      ]
+    }
+    { name: "STATUS",
+      desc: "SPI status register",
+      swaccess: "ro"
+      hwaccess: "hrw"
+      hwext:    "true"
+      fields: [
+        { bits: "0",
+          name: "TX_FIFO_FULL",
+          desc: "tx fifo is full",
+        }
+        { bits: "1",
+          name: "TX_FIFO_EMPTY",
+          desc: "tx fifo is empty",
+        }
+        { bits: "2",
+          name: "RX_FIFO_FULL",
+          desc: "rx fifo is full",
+        }
+        { bits: "3",
+          name: "RX_FIFO_EMPTY",
+          desc: "rx fifo is empty",
+        }
+        { bits: "4",
+          name: "BUSY",
+          desc: "SPI is transmitting or nor, 0: IDLE, 1: BUSY",
+        }
+      ]
+    }
+    { name: "TXDATA",
+      desc: "SPI TX data register",
+      swaccess: "wo",
+      hwaccess: "hro",
+      hwqe: "true",
+      fields: [
+        { bits: "31:0" }
+      ]
+    }
+    { name: "RXDATA",
+      desc: "SPI RX data register",
+      swaccess: "ro",
+      hwaccess: "hrw",
+      hwext: "true",
+      hwre: "true",
+      fields: [
+        { bits: "31:0" }
+      ]
+    }
+  ]
+}

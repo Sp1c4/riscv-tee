@@ -1,0 +1,138 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{ name: "i2c",
+  clocking: [{clock: "clk_i", reset: "rst_ni"}],
+  bus_interfaces: [
+    { protocol: "tlul", direction: "device" }
+  ],
+  regwidth: "32",
+  registers: [
+    { name: "CTRL",
+      desc: "I2C control register",
+      swaccess: "rw",
+      hwaccess: "hrw",
+      hwqe: "true",
+      fields: [
+        { bits: "0",
+          name: "START",
+          desc: "I2C start",
+        }
+        { bits: "1",
+          name: "INT_EN",
+          desc: "I2C interrupt enable",
+        }
+        { bits: "2",
+          name: "INT_PENDING",
+          swaccess: "rw1c",
+          desc: "I2C interrupt pending",
+        }
+        { bits: "3",
+          name: "MODE",
+          desc: "I2C mode, 0: master, 1: slave",
+        }
+        { bits: "4",
+          name: "WRITE",
+          desc: "0: write, 1: read",
+        }
+        { bits: "5",
+          name: "ERROR",
+          swaccess: "ro",
+          desc: "0: no error, 1: error",
+        }
+        { bits: "6",
+          name: "SLAVE_WR",
+          swaccess: "ro",
+          desc: "0: write, 1: read",
+        }
+        { bits: "7",
+          name: "SLAVE_RDY",
+          desc: "0: not ready, 1: ready",
+        }
+        { bits: "15:8",
+          name: "SLAVE_ADDR",
+          desc: "I2C slave address",
+        }
+        { bits: "31:16",
+          name: "CLK_DIV",
+          desc: "I2C clock divider count",
+        }
+      ]
+    }
+    { name: "MASTER_DATA",
+      desc: "I2C master transfer data register",
+      swaccess: "rw",
+      hwaccess: "hrw",
+      fields: [
+        { bits: "7:0",
+          name: "ADDRESS",
+          desc: "I2C slave address",
+        }
+        { bits: "15:8",
+          name: "REGREG",
+          desc: "I2C write or read reg",
+        }
+        { bits: "23:16",
+          name: "DATA",
+          desc: "I2C write or read data",
+        }
+      ]
+    }
+    { name: "SLAVE_ADDR",
+      desc: "I2C slave read or write address register",
+      swaccess: "ro",
+      hwaccess: "hrw",
+      fields: [
+        { bits: "7:0",
+          name: "ADDR0",
+          desc: "I2C slave read or write address[7:0]",
+        }
+        { bits: "15:8",
+          name: "ADDR1",
+          desc: "I2C slave read or write address[15:8]",
+        }
+        { bits: "23:16",
+          name: "ADDR2",
+          desc: "I2C slave read or write address[23:16]",
+        }
+        { bits: "31:24",
+          name: "ADDR3",
+          desc: "I2C slave read or write address[31:24]",
+        }
+      ]
+    }
+    { name: "SLAVE_WDATA",
+      desc: "I2C slave write data register",
+      swaccess: "ro",
+      hwaccess: "hrw",
+      fields: [
+        { bits: "7:0",
+          name: "WDATA0",
+          desc: "I2C slave write data[7:0]",
+        }
+        { bits: "15:8",
+          name: "WDATA1",
+          desc: "I2C slave write data[15:8]",
+        }
+        { bits: "23:16",
+          name: "WDATA2",
+          desc: "I2C slave write data[23:16]",
+        }
+        { bits: "31:24",
+          name: "WDATA3",
+          desc: "I2C slave write data[31:24]",
+        }
+      ]
+    }
+    { name: "SLAVE_RDATA",
+      desc: "I2C slave read data register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "I2C slave read data",
+        }
+      ]
+    }
+  ]
+}

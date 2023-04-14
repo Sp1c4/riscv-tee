@@ -112,8 +112,7 @@
         .align  6;                                                      \
         .globl _start;                                                  \
 _start:                                                                 \
-        li x26, 0x00;                                                   \
-        li x27, 0x00;
+        csrrwi x0, sstatus, 0x0;
 
 //-----------------------------------------------------------------------
 // End Macro
@@ -127,16 +126,14 @@ _start:                                                                 \
 //-----------------------------------------------------------------------
 
 #define RVTEST_PASS                                                     \
-        li x26, 0x01;                                                   \
-        li x27, 0x01;                                                   \
+        csrrwi x0, sstatus, 0x3;                                        \
 loop_pass:                                                              \
         j loop_pass
 
 #define TESTNUM gp
 
 #define RVTEST_FAIL                                                     \
-        li x26, 0x01;                                                   \
-        li x27, 0x00;                                                   \
+        csrrwi x0, sstatus, 0x1;                                        \
 loop_fail:                                                              \
         j loop_fail
 

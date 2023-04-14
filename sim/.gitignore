@@ -1,8 +1,6 @@
-# Object files
-*.o
-*.ko
-*.obj
+testbench_verilator
+*.log
+*.vcd
+*.bin
+cobj_dir/
 
-inst.data
-out.vvp
-tinyriscv_soc_tb.vcd

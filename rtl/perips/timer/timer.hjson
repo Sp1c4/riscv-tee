@@ -1,0 +1,58 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{ name: "timer",
+  clocking: [{clock: "clk_i", reset: "rst_ni"}],
+  bus_interfaces: [
+    { protocol: "tlul", direction: "device" }
+  ],
+  regwidth: "32",
+  registers: [
+    { name: "CTRL",
+      desc: "Timer control register",
+      swaccess: "rw",
+      hwaccess: "hrw",
+      hwqe:     "true",
+      fields: [
+        { bits: "0",
+          name: "EN",
+          desc: "Timer enable(start)",
+        }
+        { bits: "1",
+          name: "INT_EN",
+          desc: "Timer interrupt enable",
+        }
+        { bits: "2",
+          name: "INT_PENDING",
+          swaccess: "rw1c",
+          desc: "Timer interrupt pending",
+        }
+        { bits: "3",
+          name: "MODE",
+          desc: "Timer mode",
+        }
+        { bits: "31:8",
+          name: "CLK_DIV",
+          desc: "Timer clock divider count",
+        }
+      ]
+    }
+    { name: "VALUE",
+      desc: "Timer expired value register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0" }
+      ]
+    }
+    { name: "COUNT",
+      desc: "Timer current count register",
+      swaccess: "ro",
+      hwaccess: "hrw",
+      hwext: "true",
+      fields: [
+        { bits: "31:0" }
+      ]
+    }
+  ]
+}

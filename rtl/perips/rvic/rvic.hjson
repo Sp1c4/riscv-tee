@@ -1,0 +1,113 @@
+// Copyright lowRISC contributors.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+{ name: "rvic",
+  clocking: [{clock: "clk_i", reset: "rst_ni"}],
+  bus_interfaces: [
+    { protocol: "tlul", direction: "device" }
+  ],
+  regwidth: "32",
+  registers: [
+    { name: "ENABLE",
+      desc: "RVIC interrupt enable register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "one bit for one interrupt source",
+        }
+      ]
+    }
+    { name: "PENDING",
+      desc: "RVIC interrupt pending register",
+      swaccess: "rw",
+      hwaccess: "hrw",
+      fields: [
+        { bits: "31:0",
+          swaccess: "rw1c",
+          desc: "one bit for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY0",
+      desc: "RVIC interrupt priority0 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY1",
+      desc: "RVIC interrupt priority1 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY2",
+      desc: "RVIC interrupt priority2 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY3",
+      desc: "RVIC interrupt priority3 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY4",
+      desc: "RVIC interrupt priority4 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY5",
+      desc: "RVIC interrupt priority5 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY6",
+      desc: "RVIC interrupt priority6 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+    { name: "PRIORITY7",
+      desc: "RVIC interrupt priority7 register",
+      swaccess: "rw",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0",
+          desc: "eight bits for one interrupt source",
+        }
+      ]
+    }
+  ]
+}

@@ -15,12 +15,13 @@ default: all
 # Build rules
 #--------------------------------------------------------------------
 
-RISCV_PREFIX ?= ../../tools/gnu-mcu-eclipse-riscv-none-gcc-8.2.0-2.2-20190521-0004-win64/bin/riscv-none-embed-
+RISCV_PREFIX ?= /opt/riscv32/bin/riscv32-unknown-elf-
 RISCV_GCC ?= $(RISCV_PREFIX)gcc
 RISCV_GCC_OPTS ?= -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles
 RISCV_OBJDUMP ?= $(RISCV_PREFIX)objdump --disassemble-all
 RISCV_OBJCOPY ?= $(RISCV_PREFIX)objcopy
 
+BIN_TO_MEM    := $(src_dir)/../../tools/BinToMem.py
 
 vpath %.S $(src_dir)
 
@@ -31,6 +32,7 @@ vpath %.S $(src_dir)
 	$(RISCV_OBJDUMP) generated/$< > generated/$@
 	$(RISCV_OBJCOPY) -O verilog generated/$<   generated/$<.verilog
 	$(RISCV_OBJCOPY) -O binary generated/$<   generated/$<.bin
+	$(BIN_TO_MEM) generated/$<.bin generated/$<.mem
 
 
 define compile_template

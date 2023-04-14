@@ -1,0 +1,6 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.bin
+*.dump

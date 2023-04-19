@@ -1,4 +1,4 @@
-# 时钟约束50MHz
+                                                                                                             # 时钟约束50MHz
 set_property -dict { PACKAGE_PIN U18 IOSTANDARD LVCMOS33 } [get_ports {clk}]; 
 create_clock -add -name sys_clk_pin -period 20.00 -waveform {0 10} [get_ports {clk}];
 

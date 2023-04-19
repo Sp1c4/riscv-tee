@@ -1,0 +1,58 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/perips/IOPMP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IOPMP
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/clint.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clint
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/csr_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module csr_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/ex.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ex
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/utils/full_handshake_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module full_handshake_rx
+WARNING: [VRFC 10-3380] identifier 'req' is used before its declaration [/home/mir/code/riscv-tee/rtl/utils/full_handshake_rx.v:60]
+WARNING: [VRFC 10-3380] identifier 'req' is used before its declaration [/home/mir/code/riscv-tee/rtl/utils/full_handshake_rx.v:68]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/utils/full_handshake_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module full_handshake_tx
+WARNING: [VRFC 10-3380] identifier 'ack' is used before its declaration [/home/mir/code/riscv-tee/rtl/utils/full_handshake_tx.v:71]
+WARNING: [VRFC 10-3380] identifier 'ack' is used before its declaration [/home/mir/code/riscv-tee/rtl/utils/full_handshake_tx.v:79]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/utils/gen_dff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gen_pipe_dff
+INFO: [VRFC 10-311] analyzing module gen_rst_0_dff
+INFO: [VRFC 10-311] analyzing module gen_rst_1_dff
+INFO: [VRFC 10-311] analyzing module gen_rst_def_dff
+INFO: [VRFC 10-311] analyzing module gen_en_dff
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/perips/gpio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gpio
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/id.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module id
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/id_ex.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module id_ex
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/if_id.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module if_id
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/debug/jtag_dm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jtag_dm
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/debug/jtag_driver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jtag_driver
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/debug/jtag_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jtag_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/perips/ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regs
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/rib.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/perips/rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/perips/timer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module timer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/core/tinyriscv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tinyriscv
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/rtl/soc/tinyriscv_soc_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tinyriscv_soc_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

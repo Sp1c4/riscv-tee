@@ -36,6 +36,9 @@ module tinyriscv_soc_top(
 
     );
 
+    //wire jtag_TDI_1;
+    //wire jtag_TDO_0;
+
     wire uart_debug_pin=0; // 串口下载使能引脚
     wire uart_tx_pin=0; // UART发送引脚
     wire uart_rx_pin=0;  // UART接收引脚
@@ -89,41 +92,47 @@ module tinyriscv_soc_top(
     wire m5_we_i;
     
 
-    // slave 0 interface
+    // slave 0 interface rom
     wire[`MemAddrBus] s0_addr_o;
     wire[`MemBus] s0_data_o;
     wire[`MemBus] s0_data_i;
     wire s0_we_o;
 
-    // slave 1 interface
+    // slave 1 interface ram
     wire[`MemAddrBus] s1_addr_o;
     wire[`MemBus] s1_data_o;
     wire[`MemBus] s1_data_i;
     wire s1_we_o;
 
-    // slave 2 interface
+    // slave 2 interface timer
     wire[`MemAddrBus] s2_addr_o;
     wire[`MemBus] s2_data_o;
     wire[`MemBus] s2_data_i;
     wire s2_we_o;
 
-    // slave 3 interface
+    // slave 3 interface rom
     wire[`MemAddrBus] s3_addr_o;
     wire[`MemBus] s3_data_o;
     wire[`MemBus] s3_data_i;
     wire s3_we_o;
 
-    // slave 4 interface
+    // slave 4 interface gpio
     wire[`MemAddrBus] s4_addr_o;
     wire[`MemBus] s4_data_o;
     wire[`MemBus] s4_data_i;
     wire s4_we_o;
 
-    // slave 5 interface
+    // slave 5 interface ram
     wire[`MemAddrBus] s5_addr_o;
     wire[`MemBus] s5_data_o;
     wire[`MemBus] s5_data_i;
     wire s5_we_o;
+
+    // slave 6 interface iopmp
+    wire[`MemAddrBus] s6_addr_o;
+    wire[`MemBus] s6_data_o;
+    wire[`MemBus] s6_data_i;
+    wire s6_we_o;
 
     // rib
     wire rib_hold_flag_o;
@@ -174,16 +183,42 @@ module tinyriscv_soc_top(
     //        succ <= ~u_tinyriscv0.u_regs.regs[27];  // when = 1, run succ, otherwise fail
     //    end
     //end
+    wire[`MemAddrBus] m0_iopmp_addr_i;
+    wire[`MemBus] m0_iopmp_data_i;
+    wire[`MemBus] m0_iopmp_data_o;
+    wire m0_iopmp_req_i;
+    wire m0_iopmp_we_i;
+    IOPMP iopmp_core0(
+        .clk            (clk),
+        .rst            (rst),
+        
+        .rib_ex_addr_o  (m0_addr_i  ),
+        .rib_ex_data_i  (m0_data_o  ),
+        .rib_ex_data_o  (m0_data_i  ),
+        .rib_ex_req_o   (m0_req_i   ),
+        .rib_ex_we_o    (m0_we_i    ),
+
+        .core0_ex_addr_o(m0_iopmp_addr_i),
+        .core0_ex_data_i(m0_iopmp_data_o),
+        .core0_ex_data_o(m0_iopmp_data_i),
+        .core0_ex_req_o (m0_iopmp_req_i ),
+        .core0_ex_we_o  (m0_iopmp_we_i  ),
+
+        .we_i(s6_we_o),
+        .addr_i(s6_addr_o),
+        .data_i(s6_data_o),
+        .data_o(s6_data_i)
+    );
 
     // tinyriscv处理器核模块例化
     tinyriscv u_tinyriscv0(
         .clk(clk),
         .rst(rst),
-        .rib_ex_addr_o(m0_addr_i),
-        .rib_ex_data_i(m0_data_o),
-        .rib_ex_data_o(m0_data_i),
-        .rib_ex_req_o(m0_req_i),
-        .rib_ex_we_o(m0_we_i),
+        .rib_ex_addr_o(m0_iopmp_addr_i),
+        .rib_ex_data_i(m0_iopmp_data_o),
+        .rib_ex_data_o(m0_iopmp_data_i),
+        .rib_ex_req_o(m0_iopmp_req_i),
+        .rib_ex_we_o(m0_iopmp_we_i),
 
         .rib_pc_addr_o(m1_addr_i),
         .rib_pc_data_i(m1_data_o),
@@ -305,20 +340,6 @@ module tinyriscv_soc_top(
         .reg_data(gpio_data)
     );
 
-    // // spi模块例化
-    // spi spi_0(
-    //     .clk(clk),
-    //     .rst(rst),
-    //     .data_i(s5_data_o),
-    //     .addr_i(s5_addr_o),
-    //     .we_i(s5_we_o),
-    //     .data_o(s5_data_i),
-    //     .spi_mosi(spi_mosi),
-    //     .spi_miso(spi_miso),
-    //     .spi_ss(spi_ss),
-    //     .spi_clk(spi_clk)
-    // );
-
     // rib模块例化
     rib u_rib(
         .clk(clk),
@@ -402,20 +423,17 @@ module tinyriscv_soc_top(
         .s5_data_i(s5_data_i),
         .s5_we_o(s5_we_o),
 
+        // slave 6 interface
+        .s6_addr_o(s6_addr_o),
+        .s6_data_o(s6_data_o),
+        .s6_data_i(s6_data_i),
+        .s6_we_o(s6_we_o),
+
+
         .hold_flag_o(rib_hold_flag_o)
     );
 
-    // // 串口下载模块例化
-    // uart_debug u_uart_debug(
-    //     .clk(clk),
-    //     .rst(rst),
-    //     .debug_en_i(uart_debug_pin),
-    //     .req_o(m3_req_i),
-    //     .mem_we_o(m3_we_i),
-    //     .mem_addr_o(m3_addr_i),
-    //     .mem_wdata_o(m3_data_i),
-    //     .mem_rdata_i(m3_data_o)
-    // );
+
 
     // jtag模块例化
     jtag_top #(
@@ -449,8 +467,8 @@ module tinyriscv_soc_top(
     ) u_jtag_top1(
         .clk(clk),
         .jtag_rst_n(rst),
-        .jtag_pin_TCK(jtag_TCK_1),
-        .jtag_pin_TMS(jtag_TMS_1),
+        .jtag_pin_TCK(jtag_TCK_0),
+        .jtag_pin_TMS(jtag_TMS_0),
         .jtag_pin_TDI(jtag_TDI_1),
         .jtag_pin_TDO(jtag_TDO_1),
         .reg_we_o(jtag_reg_we_o_1),

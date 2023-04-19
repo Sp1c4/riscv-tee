@@ -1,0 +1,41 @@
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tinyriscv_soc_top_behav xil_defaultlib.tinyriscv_soc_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/mir/code/riscv-tee/vivado/tiny_prj/tiny_prj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.IOPMP
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.ctrl
+Compiling module xil_defaultlib.regs
+Compiling module xil_defaultlib.csr_reg
+Compiling module xil_defaultlib.gen_pipe_dff
+Compiling module xil_defaultlib.gen_pipe_dff(DW=8)
+Compiling module xil_defaultlib.if_id
+Compiling module xil_defaultlib.id
+Compiling module xil_defaultlib.gen_pipe_dff(DW=1)
+Compiling module xil_defaultlib.gen_pipe_dff(DW=5)
+Compiling module xil_defaultlib.id_ex
+Compiling module xil_defaultlib.ex
+Compiling module xil_defaultlib.div
+Compiling module xil_defaultlib.clint
+Compiling module xil_defaultlib.tinyriscv
+Compiling module xil_defaultlib.rom
+Compiling module xil_defaultlib.ram
+Compiling module xil_defaultlib.timer
+Compiling module xil_defaultlib.gpio
+Compiling module xil_defaultlib.rib
+Compiling module xil_defaultlib.full_handshake_tx(DW=40)
+Compiling module xil_defaultlib.full_handshake_rx(DW=40)
+Compiling module xil_defaultlib.jtag_driver_default
+Compiling module xil_defaultlib.jtag_dm_default
+Compiling module xil_defaultlib.jtag_top_default
+Compiling module xil_defaultlib.tinyriscv_soc_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tinyriscv_soc_top_behav

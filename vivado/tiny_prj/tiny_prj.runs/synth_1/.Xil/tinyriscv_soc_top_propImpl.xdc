@@ -21,6 +21,8 @@ set_property src_info {type:XDC file:1 line:60 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN V20 [get_ports jtag_TDO_0]
 set_property src_info {type:XDC file:1 line:64 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN U20  [get_ports jtag_TCK_1]
+set_property src_info {type:XDC file:1 line:65 export:INPUT save:INPUT read:READ} [current_design]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets jtag_TCK_1]
 set_property src_info {type:XDC file:1 line:69 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V15 [get_ports jtag_TMS_1]
 set_property src_info {type:XDC file:1 line:73 export:INPUT save:INPUT read:READ} [current_design]

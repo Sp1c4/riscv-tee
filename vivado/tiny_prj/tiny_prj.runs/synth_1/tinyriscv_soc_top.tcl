@@ -88,6 +88,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/mir/code/riscv-tee/rtl/core/defines.v
+  /home/mir/code/riscv-tee/rtl/perips/IOPMP.v
   /home/mir/code/riscv-tee/rtl/core/clint.v
   /home/mir/code/riscv-tee/rtl/core/csr_reg.v
   /home/mir/code/riscv-tee/rtl/core/ctrl.v

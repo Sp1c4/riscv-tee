@@ -47,6 +47,7 @@ def main():
     iverilog_cmd.append(rtl_dir + r'/rtl/perips/uart.v')
     iverilog_cmd.append(rtl_dir + r'/rtl/perips/gpio.v')
     iverilog_cmd.append(rtl_dir + r'/rtl/perips/spi.v')
+    iverilog_cmd.append(rtl_dir + r'/rtl/perips/IOPMP.v')
     # ../rtl/debug
     iverilog_cmd.append(rtl_dir + r'/rtl/debug/jtag_dm.v')
     iverilog_cmd.append(rtl_dir + r'/rtl/debug/jtag_driver.v')

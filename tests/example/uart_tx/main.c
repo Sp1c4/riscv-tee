@@ -8,8 +8,9 @@
 int main()
 {
     uart_init();
-
-    xprintf("hello world\n");
+    xprintf("core0 IOPMP OPEN\n");
+    xprintf("core0 IOPMP CLOSE\n");
+    xprintf("core1 IOPMP OPEN\n");
 
     while (1);
 }
